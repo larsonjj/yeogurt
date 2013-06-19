@@ -135,16 +135,27 @@ module.exports = function (grunt) {
             }
         },
         jade: {
-            all: {
+            test: {
                 options: {
                     pretty: true,
+                    client: false,
                     data: {
                         debug: false
                     }
                 },
-                files: {
-                    '<%= yeoman.app %>/test.html': ['<%= yeoman.app %>/jade/pages/test.jade']
-                }
+                dest: '<%= yeoman.app %>/',
+                src: ['<%= yeoman.app %>/jade/pages/*.jade']
+            },
+            dist: {
+                options: {
+                    pretty: true,
+                    client: false,
+                    data: {
+                        debug: false
+                    }
+                },
+                dest: '<%= yeoman.dist %>/',
+                src: ['<%= yeoman.dist %>/jade/pages/*.jade']
             }
         },
         coffee: {
@@ -207,6 +218,9 @@ module.exports = function (grunt) {
                 }]
             }
         },
+        uglify: {
+
+        },
         // not used since Uglify task does concat,
         // but still available if needed
         /*concat: {
@@ -254,7 +268,7 @@ module.exports = function (grunt) {
                 dirs: ['<%= yeoman.dist %>']
             },
             html: ['<%= yeoman.dist %>/{,*/}*.html'],
-            css: ['<%= yeoman.dist %>/styles/{,*/}*.css'],
+            css: ['<%= yeoman.dist %>/styles/{,*/}*.css']
         },
         imagemin: {
             dist: {
@@ -347,7 +361,7 @@ module.exports = function (grunt) {
         },
         concurrent: {
             server: [
-                'jade',
+                'jade:test',
                 'compass',
                 'coffee:dist',
                 'copy:styles',
@@ -359,7 +373,7 @@ module.exports = function (grunt) {
                 'autoprefixer'
             ],
             dist: [
-                'jade',
+                'jade:dist',
                 'coffee',
                 'compass',
                 'copy:styles',
