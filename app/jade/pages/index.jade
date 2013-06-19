@@ -1,0 +1,15 @@
+include ../components/header
+    body
+        .container
+            .hero-unit
+                h1 'Allo, 'Allo!
+                p You now have
+                ul
+                    li HTML5 Boilerplate
+                    li Twitter Bootstrap
+                    li RequireJS
+                p installed.
+                h3 Enjoy coding! - Yeoman
+                include ../components/footer
+        script.
+            require(['../components/hello']);

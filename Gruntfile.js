@@ -140,7 +140,7 @@ module.exports = function (grunt) {
                     pretty: true,
                     client: false,
                     data: {
-                        debug: false
+                        debug: true
                     }
                 },
                 dest: '<%= yeoman.app %>/',
@@ -155,7 +155,7 @@ module.exports = function (grunt) {
                     }
                 },
                 dest: '<%= yeoman.dist %>/',
-                src: ['<%= yeoman.dist %>/jade/pages/*.jade']
+                src: ['<%= yeoman.app %>/jade/pages/*.jade']
             }
         },
         coffee: {
@@ -219,7 +219,15 @@ module.exports = function (grunt) {
             }
         },
         uglify: {
-
+            dist: {
+                files: [{
+                    expand: true,
+                    src: '*.js',
+                    dest: '.tmp/scripts/components/',
+                    cwd: 'app/scripts/components/',
+                    ext: '.js'
+                }]
+            }
         },
         // not used since Uglify task does concat,
         // but still available if needed
@@ -347,7 +355,7 @@ module.exports = function (grunt) {
                     cwd: '.tmp/scripts',
                     dest: '<%= yeoman.dist %>/scripts',
                     src: [
-                        '*.js'
+                        '{,*/}*'
                     ]
                 }]
             },
@@ -376,6 +384,7 @@ module.exports = function (grunt) {
                 'jade:dist',
                 'coffee',
                 'compass',
+                'uglify',
                 'copy:styles',
                 'imagemin',
                 'svgmin',
