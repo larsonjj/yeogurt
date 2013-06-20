@@ -1,5 +1,4 @@
-
 define([], function() {
-  "use strict";
-  return "'Allo 'Allo!";
+    'use strict';
+    return 'Welcome to Yeogurt!';
 });
