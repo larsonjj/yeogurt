@@ -60,6 +60,23 @@ module.exports = function (grunt) {
                 ]
             }
         },
+        // don't keep passwords in source control
+        secret: grunt.file.readJSON('sftp.json'),
+        sftp: {
+            deploy: {
+                files: {
+                    './': 'dist/**'
+                },
+                options: {
+                    path: '<%= secret.serverPath %>',
+                    host: '<%= secret.host %>',
+                    username: '<%= secret.username %>',
+                    password: '<%= secret.password %>',
+                    createDirectories: true,
+                    srcBasePath: 'dist/'
+                }
+            }
+        },
         connect: {
             options: {
                 port: 9000,
