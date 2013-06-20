@@ -61,7 +61,7 @@ module.exports = function (grunt) {
             }
         },
         // don't keep passwords in source control
-        secret: grunt.file.readJSON('sftp.json'),
+        secret: grunt.file.readJSON('example-sftp.json'),
         sftp: {
             deploy: {
                 files: {
