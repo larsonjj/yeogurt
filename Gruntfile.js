@@ -30,7 +30,7 @@ module.exports = function (grunt) {
             },
             jade: {
                 files: ['<%= yeoman.app %>/jade/{,*/}*.jade'],
-                tasks: ['jade']
+                tasks: ['jade:test', 'jade:testTwo']
             },
             coffee: {
                 files: ['<%= yeoman.app %>/scripts/{,*/}*.coffee'],
@@ -160,8 +160,19 @@ module.exports = function (grunt) {
                         debug: true
                     }
                 },
-                dest: '<%= yeoman.app %>/',
+                dest: '<%= yeoman.app %>/html/pages/',
                 src: ['<%= yeoman.app %>/jade/pages/*.jade']
+            },
+            testTwo: {
+                options: {
+                    pretty: true,
+                    client: false,
+                    data: {
+                        debug: true
+                    }
+                },
+                dest: '<%= yeoman.app %>/html/components/',
+                src: ['<%= yeoman.app %>/jade/components/*.jade']
             },
             dist: {
                 options: {
@@ -171,8 +182,19 @@ module.exports = function (grunt) {
                         debug: false
                     }
                 },
-                dest: '<%= yeoman.dist %>/',
+                dest: '<%= yeoman.dist %>/html/pages/',
                 src: ['<%= yeoman.app %>/jade/pages/*.jade']
+            },
+            distTwo: {
+                options: {
+                    pretty: true,
+                    client: false,
+                    data: {
+                        debug: false
+                    }
+                },
+                dest: '<%= yeoman.dist %>/html/components/',
+                src: ['<%= yeoman.app %>/jade/components/*.jade']
             }
         },
         coffee: {
@@ -387,6 +409,7 @@ module.exports = function (grunt) {
         concurrent: {
             server: [
                 'jade:test',
+                'jade:testTwo',
                 'compass',
                 'coffee:dist',
                 'copy:styles',
@@ -399,6 +422,7 @@ module.exports = function (grunt) {
             ],
             dist: [
                 'jade:dist',
+                'jade:distTwo',
                 'coffee',
                 'compass',
                 'uglify',
