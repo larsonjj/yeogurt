@@ -1,3 +1,10 @@
 /* _variables.scss
 ** Declare all variables within this file
  */
+
+/* Author Custom Variables */
+
+/* Inuit.css Variable Overrides */
+$use-grids:         true;
+$desk-start:        481px; // Mobile First (phone: 1-480px, desk: 481px+)
+$responsive:        true;

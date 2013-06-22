@@ -1,17 +1,20 @@
 /* main.scss
 ** Main Sass file that will be used to import all other components
 */
-
-/* Import Globals */
+/* Import Variables */
 @import 'global/_variables';
 
+/* Import Mixins */
+@import 'global/_mixins';
+
 /* Import Libraries */
-@import 'sass-bootstrap/lib/bootstrap';
+@import 'inuit.css/_inuit';
+@import 'bourbon/app/assets/stylesheets/_bourbon';
 
 /* Import Components */
 @import 'components/_footer';
 
 .hero-unit {
     margin: 50px auto 0 auto;
-    width: 300px;
+    width: 100%;
 }

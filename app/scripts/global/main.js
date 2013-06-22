@@ -4,18 +4,12 @@ require.config({
         jquery: '../../bower_components/jquery/jquery',
         domReady: '../../bower_components/requirejs-domready/domready',
         modernizer: '../../bower_components/modernizr/modernizr',
-        bootstrap: 'vendor/bootstrap',
+        respond: '../../bower_components/respond/respond.src',
         app: '../../scripts/global/app'
-    },
-    shim: {
-        bootstrap: {
-            deps: ['jquery'],
-            exports: 'jquery'
-        }
     }
 });
 
-require(['app', 'jquery', 'domReady', 'bootstrap'], function(app, $) {
+require(['app', 'jquery', 'domReady', 'respond'], function(app, $) {
     'use strict';
     console.log(app);
     return console.log('Running jQuery %s', $().jquery);
