@@ -143,6 +143,19 @@ module.exports = function (grunt) {
                 'test/spec/{,*/}*.js'
             ]
         },
+        csslint: {
+            options: {
+                csslintrc: '.csslintrc'
+            },
+            dist: {
+                files: [{
+                    expand: true,
+                    cwd: '.tmp/styles/',
+                    src: '{,*/}*.css',
+                    dest: '.tmp/styles/'
+                }]
+            }
+        },
         mocha: {
             all: {
                 options: {
@@ -411,14 +424,13 @@ module.exports = function (grunt) {
                 'jade:test',
                 'jade:testTwo',
                 'compass',
-                'coffee:dist',
-                'copy:styles',
-                'autoprefixer'
+                'coffee:dist'
             ],
             test: [
                 'coffee',
-                'copy:styles',
-                'autoprefixer'
+                'autoprefixer',
+                'csslint',
+                'copy:styles'
             ],
             dist: [
                 'jade:dist',
@@ -426,7 +438,6 @@ module.exports = function (grunt) {
                 'coffee',
                 'compass',
                 'uglify',
-                'copy:styles',
                 'imagemin',
                 'svgmin',
                 'htmlmin'
@@ -451,6 +462,8 @@ module.exports = function (grunt) {
             'clean:server',
             'concurrent:server',
             'autoprefixer',
+            'csslint',
+            'copy:styles',
             'connect:livereload',
             'open',
             'watch'
@@ -460,7 +473,6 @@ module.exports = function (grunt) {
     grunt.registerTask('test', [
         'clean:server',
         'concurrent:test',
-        'autoprefixer',
         'connect:test',
         'mocha'
     ]);
@@ -470,6 +482,8 @@ module.exports = function (grunt) {
         'useminPrepare',
         'concurrent:dist',
         'autoprefixer',
+        'csslint',
+        'copy:styles',
         'requirejs',
         'cssmin',
         'concat',
