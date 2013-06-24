@@ -80,7 +80,7 @@ module.exports = function (grunt) {
             options: {
                 port: Math.floor(Math.random() * (9000 - 8000 + 1)) + 8000,
                 // change this to '0.0.0.0' to access the server from outside
-                hostname: 'localhost'
+                hostname: '0.0.0.0'
             },
             livereload: {
                 options: {
