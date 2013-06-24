@@ -1,4 +1,4 @@
 yeogurt
 =======
 
-Yeogurt is a build framework inspired by the yeoman project
+Yeogurt is a Multi-Site, Front-end build framework that utilizes Grunt and Bower to automate many repetitive tasks.
