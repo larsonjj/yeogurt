@@ -39,9 +39,9 @@ module.exports = function (grunt) {
                 files: ['test/spec/{,*/}*.coffee'],
                 tasks: ['coffee:test']
             },
-            sass: {
+            compass: {
                 files: ['<%= yeoman.project %>/styles/{,*/}*.{scss,sass}'],
-                tasks: ['sass:server', 'autoprefixer' ]
+                tasks: ['compass:server', 'autoprefixer' ]
             },
             styles: {
                 files: ['<%= yeoman.project %>/styles/{,*/}*.css'],
@@ -235,20 +235,24 @@ module.exports = function (grunt) {
                 }]
             }
         },
-        sass: {
-            dist: {
-                files: {
-                    '.tmp/styles/main.css': '<%= yeoman.project %>/styles/main.scss'
-                }
+        compass: {
+            options: {
+                sassDir: '<%= yeoman.project %>/styles',
+                cssDir: '.tmp/styles',
+                generatedImagesDir: '.tmp/images/generated',
+                imagesDir: '<%= yeoman.project %>/images',
+                javascriptsDir: '<%= yeoman.project %>/scripts',
+                fontsDir: '<%= yeoman.project %>/styles/fonts',
+                importPath: '<%= yeoman.project %>/bower_components',
+                httpImagesPath: '/images',
+                httpGeneratedImagesPath: '/images/generated',
+                httpFontsPath: '/styles/fonts',
+                relativeAssets: false
             },
+            dist: {},
             server: {
                 options: {
-                    debugInfo: false,
-                    style: 'expanded',
-                    sourcemap: false
-                },
-                files: {
-                    '.tmp/styles/main.css': '<%= yeoman.project %>/styles/main.scss'
+                    debugInfo: false
                 }
             }
         },
@@ -421,7 +425,7 @@ module.exports = function (grunt) {
             server: [
                 'jade:test',
                 'jade:testTwo',
-                'sass:server',
+                'compass',
                 'coffee:dist'
             ],
             test: [
@@ -434,7 +438,7 @@ module.exports = function (grunt) {
                 'jade:dist',
                 'jade:distTwo',
                 'coffee',
-                'sass:dist',
+                'compass',
                 'uglify',
                 'imagemin',
                 'svgmin',
