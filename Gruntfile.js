@@ -5,15 +5,15 @@ module.exports = function (grunt) {
     grunt.initConfig({
         hub: {
             all: {
-                src: ['./{,*/}/Gruntfile.js'],
+                src: ['./sites/{,*/}/Gruntfile.js'],
                 tasks: ['build']
             },
             server: {
-                src: ['./{,*/}/Gruntfile.js'],
+                src: ['./sites/{,*/}/Gruntfile.js'],
                 tasks: ['server']
             },
             sftp: {
-                src: ['./{,*/}/Gruntfile.js'],
+                src: ['./sites/{,*/}/Gruntfile.js'],
                 tasks: ['sftp']
             }
         }
