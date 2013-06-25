@@ -4,7 +4,14 @@
 
 /* Author Custom Variables */
 
-/* Inuit.css Variable Overrides */
-$use-grids:         true;
-$desk-start:        768px; // Mobile First (phone: 1-767px, desk: 768px+)
-$responsive:        true;
+/* CSS Wizardry Grid Variable Overrides */
+$breakpoints:           ('mob' '(max-width: 767px)', 'desk' '(min-width: 768px)');
+
+$breakpoint-has-widths: ('mob', 'desk');
+$breakpoint-has-push:   ('mob', 'desk');
+$breakpoint-has-pull:   ('mob', 'desk');
+
+$use-silent-classes:    true;
+
+$push:                  true;
+$pull:                  true;
