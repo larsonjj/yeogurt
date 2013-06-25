@@ -53,6 +53,7 @@ module.exports = function (grunt) {
                 },
                 files: [
                     '<%= yeoman.project %>/*.html',
+                    '<%= yeoman.project %>/html/{,*/}*.html',
                     '.tmp/styles/{,*/}*.css',
                     '{.tmp,<%= yeoman.project %>}/scripts/{,*/}*.js',
                     '<%= yeoman.project %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
@@ -115,7 +116,7 @@ module.exports = function (grunt) {
         },
         open: {
             server: {
-                path: 'http://localhost:<%= connect.options.port %>'
+                path: 'http://localhost:<%= connect.options.port %>/html/pages/'
             }
         },
         clean: {
