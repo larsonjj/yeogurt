@@ -2,8 +2,7 @@
   "name": "yeogurt",
   "version": "0.0.1",
   "dependencies": {
-    "csswizardry-grids": "~2.2.0",
-    "normalize-scss", "2.1.0",
+    "foundation", "~4.2.3",
     "requirejs": "~2.1.4",
     "modernizr": "~2.6.2",
     "jquery": "~1.10.1",
