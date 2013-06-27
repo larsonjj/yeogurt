@@ -5,6 +5,7 @@ require.config({
         domReady: '../../bower_components/requirejs-domready/domready',
         modernizer: '../../bower_components/modernizr/modernizr',
         respond: '../../bower_components/respond/respond.src',
+        foundation: '../../bower_components/foundation/js/foundation/foundation',
         app: '../../scripts/global/app'
     }
 });
