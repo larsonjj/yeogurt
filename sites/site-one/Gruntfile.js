@@ -45,7 +45,7 @@ module.exports = function (grunt) {
             },
             styles: {
                 files: ['<%= yeoman.project %>/styles/{,*/}*.css'],
-                tasks: ['copy:styles', 'autoprefixer']
+                tasks: ['copy:styles', 'autoprefixer', 'concat:dist']
             },
             livereload: {
                 options: {
@@ -151,7 +151,7 @@ module.exports = function (grunt) {
                 files: [{
                     expand: true,
                     cwd: '.tmp/styles/',
-                    src: '{,*/}*.css',
+                    src: 'main.css',
                     dest: '.tmp/styles/'
                 }]
             }
@@ -284,11 +284,15 @@ module.exports = function (grunt) {
                 }]
             }
         },
-        // not used since Uglify task does concat,
-        // but still available if needed
-        /*concat: {
-            dist: {}
-        },*/
+        concat: {
+            options: {
+                separator: ' '
+            },
+            dist: {
+                src: ['.tmp/styles/lib.css', '.tmp/styles/main.css'],
+                dest: '.tmp/styles/main.css'
+            }
+        },
         requirejs: {
             dist: {
                 // Options: https://github.com/jrburke/r.js/blob/master/build/example.build.js
@@ -440,6 +444,7 @@ module.exports = function (grunt) {
                 'jade:distTwo',
                 'coffee',
                 'compass',
+                'concat:dist',
                 'uglify',
                 'imagemin',
                 'svgmin',
@@ -464,9 +469,10 @@ module.exports = function (grunt) {
         grunt.task.run([
             'clean:server',
             'concurrent:server',
+            'copy:styles',
             'autoprefixer',
             'csslint',
-            'copy:styles',
+            'concat:dist',
             'connect:livereload',
             'open',
             'watch'
@@ -484,12 +490,12 @@ module.exports = function (grunt) {
         'clean:dist',
         'useminPrepare',
         'concurrent:dist',
+        'copy:styles',
         'autoprefixer',
         'csslint',
-        'copy:styles',
+        'concat:dist',
         'requirejs',
         'cssmin',
-        'concat',
         'uglify',
         'copy:dist',
         // 'rev',

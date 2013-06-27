@@ -1,15 +1,7 @@
 {
-    "compatible-vendor-prefixes": false,
+    "box-sizing"               : false,
+    "display-property-grouping": false,
+    "star-property-hack"       : false,
     "duplicate-background-images": false,
-    "important": false,
-    "outline-none": false,
-    "unqualified-attributes": false,
-    "box-model": false,
-    "box-sizing": false,
-    "qualified-headings": false,
-    "font-sizes": false,
-    "star-property-hack": false,
-    "regex-selectors": false,
-    "shorthand": false,
-    "underscore-property-hack": false
+    "box-model": false
 }

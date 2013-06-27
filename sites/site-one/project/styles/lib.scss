@@ -1,0 +1,53 @@
+/* lib.scss
+** Lib Sass file that will be used to import all global overrides and libraries
+*/
+/* Import Variables */
+@import 'global/_variables';
+
+/* Import Mixins */
+@import 'global/_mixins';
+
+/* Import Libraries */
+@import '../bower_components/foundation/scss/normalize';
+@import '../bower_components/bourbon/app/assets/stylesheets/_bourbon';
+
+// This includes all of the foundation global elements that are needed to work with any of the other files.
+@import "../bower_components/foundation/scss/foundation/variables";
+
+// Foundation Components
+
+@import "../bower_components/foundation/scss/foundation/components/global";
+@import "../bower_components/foundation/scss/foundation/components/grid";
+@import "../bower_components/foundation/scss/foundation/components/visibility";
+@import "../bower_components/foundation/scss/foundation/components/block-grid";
+@import "../bower_components/foundation/scss/foundation/components/type";
+@import "../bower_components/foundation/scss/foundation/components/buttons";
+@import "../bower_components/foundation/scss/foundation/components/forms";
+// @import "../bower_components/foundation/scss/foundation/components/custom-forms";
+@import "../bower_components/foundation/scss/foundation/components/button-groups";
+// @import "../bower_components/foundation/scss/foundation/components/dropdown-buttons";
+// @import "../bower_components/foundation/scss/foundation/components/split-buttons";
+// @import "../bower_components/foundation/scss/foundation/components/flex-video";
+@import "../bower_components/foundation/scss/foundation/components/section";
+@import "../bower_components/foundation/scss/foundation/components/top-bar";
+@import "../bower_components/foundation/scss/foundation/components/orbit";
+@import "../bower_components/foundation/scss/foundation/components/reveal";
+// @import "../bower_components/foundation/scss/foundation/components/joyride";
+// @import "../bower_components/foundation/scss/foundation/components/clearing";
+// @import "../bower_components/foundation/scss/foundation/components/alert-boxes";
+// @import "../bower_components/foundation/scss/foundation/components/breadcrumbs";
+// @import "../bower_components/foundation/scss/foundation/components/keystrokes";
+// @import "../bower_components/foundation/scss/foundation/components/labels";
+@import "../bower_components/foundation/scss/foundation/components/inline-lists";
+// @import "../bower_components/foundation/scss/foundation/components/pagination";
+// @import "../bower_components/foundation/scss/foundation/components/panels";
+// @import "../bower_components/foundation/scss/foundation/components/pricing-tables";
+// @import "../bower_components/foundation/scss/foundation/components/progress-bars";
+// @import "../bower_components/foundation/scss/foundation/components/side-nav";
+// @import "../bower_components/foundation/scss/foundation/components/sub-nav";
+// @import "../bower_components/foundation/scss/foundation/components/switch";
+// @import "../bower_components/foundation/scss/foundation/components/magellan";
+// @import "../bower_components/foundation/scss/foundation/components/tables";
+// @import "../bower_components/foundation/scss/foundation/components/thumbs";
+// @import "../bower_components/foundation/scss/foundation/components/tooltips";
+// @import "../bower_components/foundation/scss/foundation/components/dropdown";

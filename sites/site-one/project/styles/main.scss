@@ -1,16 +1,11 @@
 /* main.scss
-** Main Sass file that will be used to import all other components
+** Main Sass file that will be used to import all author components
 */
 /* Import Variables */
 @import 'global/_variables';
 
 /* Import Mixins */
 @import 'global/_mixins';
-
-/* Import Libraries */
-@import '../bower_components/foundation/scss/normalize';
-@import '../bower_components/foundation/scss/foundation';
-@import '../bower_components/bourbon/app/assets/stylesheets/_bourbon';
 
 /* Import Components */
 @import 'components/_footer';
