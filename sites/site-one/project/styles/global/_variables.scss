@@ -4,14 +4,4 @@
 
 /* Author Custom Variables */
 
-/* CSS Wizardry Grid Variable Overrides */
-$breakpoints:           ('mob' '(max-width: 767px)', 'desk' '(min-width: 768px)');
-
-$breakpoint-has-widths: ('mob', 'desk');
-$breakpoint-has-push:   ('mob', 'desk');
-$breakpoint-has-pull:   ('mob', 'desk');
-
-$use-silent-classes:    true;
-
-$push:                  true;
-$pull:                  true;
+/* Foundation Variable Overrides */
