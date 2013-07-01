@@ -1,0 +1,235 @@
+/* _secondary-nav-list.scss
+** Declare all styles for Secondary Nav List here
+ */
+
+// Only for desktop (not mobile)
+@media screen and (min-width: $small-screen) {
+
+    .navbar {
+        position: relative;
+
+        .logo-container {
+            position: absolute;
+            width: 192px;
+            height: auto;
+            .logo {
+                position: absolute;
+                z-index: 2;
+            }
+        }
+
+        .logo-shift-secondary-nav {
+            width: 365px;
+            margin-left: 180px;
+        }
+
+
+        .logo-shift-primary-nav {
+            width: 780px;
+            margin-left: 180px;
+        }
+
+        .top-bar {
+            ul > li.has-dropdown a:after {
+            display: none;
+            }
+            .top-bar-section {
+                .has-dropdown {
+                    position: static;
+                    .row {
+                        background: #636363;
+                    }
+                }
+                .has-dropdown > a {
+                    padding: 0 !important;
+                }
+                li {
+                    .pattern {
+                        height: 300px;
+                        background:transparent image-url('../images/mobDropBack.jpg') left top repeat;
+                    }
+                    .blue {
+                        border-top: 6px solid #00baff;
+                    }
+
+                    .menu-small {
+                        width: 312px;
+                        .lime {
+                            position: relative;
+                            padding-bottom: 15px;
+                            border-top: 6px solid #BCD631;
+                            left: 156px;
+                        }
+                        .green {
+                            position: relative;
+                            padding-bottom: 15px;
+                            border-top: 6px solid #7AC943;
+                            left: 312px;
+                        }
+                        .yellow {
+                            position: relative;
+                            padding-bottom: 15px;
+                            border-top: 6px solid #F1CF00;
+                            left: 468px;
+                        }
+                        .orange {
+                            position: relative;
+                            padding-bottom: 15px;
+                            border-top: 6px solid #F7931E;
+                            left: 468px;
+                        }
+                    }
+                    .row {
+                        text-align: left;
+                        .sub-col {
+                            padding: 1px 20px;
+                            .feature-image {
+                                padding-bottom: 15px;
+                            }
+                            p {
+                                color: #d3d3d3;
+                                font-size: 16px;
+                                font-family: 'gothamrnd-book', Arial;
+                                text-transform: none;
+                            }
+                            h3 {
+                                font-family: 'gothamrnd-light', Arial;
+                                font-size: 1.5em;
+                                color: invert($topbar-dropdown-header-color);
+                            }
+                            h3:not(.invert) {
+                                color: $topbar-dropdown-header-color;
+                            }
+                            a {
+                                line-height: 25px;
+                                border: none !important;
+                                background: transparent;
+                                box-shadow: none !important;
+                                text-transform: none;
+                                span {
+                                    padding-left: 8px;
+                                    font-family: 'gothamrnd-medium', arial;
+                                    font-size: 13px;
+                                }
+                            }
+                        }
+                    }
+                }
+                .parent {
+                    text-transform: uppercase;
+                    text-align: center;
+                    width: 156px;
+                    font-family: 'gothamrnd-medium,' arial;
+                    font-weight: normal;
+                    font-size: 13px;
+                    a:not(.button) {
+                        -webkit-box-shadow: 2px 2px 5px rgba(50, 50, 50, 0.75);
+                        -moz-box-shadow: 2px 2px 5px rgba(50, 50, 50, 0.75);
+                        box-shadow: 2px 2px 5px rgba(50, 50, 50, 0.75);
+                        -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=180, Color='#000000')";
+                        background-position: left top;
+                        border-right: 1px solid #878787;
+                        padding: 0 0 0 0;
+                    }
+                }
+            }
+        }
+
+        .secondary-nav-list {
+            padding: 15px 0 0 0;
+            margin: 0 0 11px 0;
+
+            li a {
+                color: #9d9d9b;
+                font-size: 13px;
+                text-transform: uppercase;
+                font-family: 'gothamrnd-medium', arial;
+            }
+
+            .secondary-nav-list__divider {
+                position: relative;
+                margin: 0;
+                left: 10px;
+                bottom: 3px;
+                color: #9d9d9b;
+            }
+        }
+
+        .sub-nav-bg {
+            background-color: #FFFFFF;
+            height: 50px;
+            width: 100%;
+            border-bottom: 4px solid #f0f0f0;
+            position: absolute;
+        }
+
+        .sub-nav-shadow {
+            position: absolute;
+            width: 100%;
+            background-image: url(../images/shadow.png);
+            background-repeat: repeat;
+            height: 17px;
+            top: 51px;
+            z-index: 1;
+        }
+
+        .email-sign-up {
+            color: #9d9d9d;
+            text-transform: uppercase;
+            font-size: 11px;
+            padding: 18px 10px 0 0;
+        }
+    }
+
+}
+
+// Only for mobile (not desktop)
+@media screen and (max-width: ($small-screen - 1px)) {
+    .top-bar {
+        height: 50px;
+        &.expanded {
+            background: transparent image-url('../images/mobDropBack.jpg') left top repeat;
+            h1 {
+                margin-right: 50px;
+            }
+            .title-area {
+                background: transparent;
+            }
+        }
+        h1 {
+            height: 50px;
+            background: -moz-linear-gradient(top, #ffffff 0%, #f3f3f3 100%);
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#f3f3f3));
+            background: -webkit-linear-gradient(top, #ffffff 0%,#f3f3f3 100%);
+            background: -o-linear-gradient(top, #ffffff 0%,#f3f3f3 100%);
+            background: -ms-linear-gradient(top, #ffffff 0%,#f3f3f3 100%);
+            background: linear-gradient(to bottom, #ffffff 0%,#f3f3f3 100%);
+            border-bottom: 1px solid #c6c6c6;
+        }
+        .toggle-topbar.menu-icon {
+            z-index: 5;
+            margin-top: -13px;
+            a span {
+                width: 20px;
+            }
+        }
+        .top-bar-section {
+            ul {
+                background: transparent;
+                margin: 25px 0 15px;
+                width: 100%;
+                li {
+                    margin-bottom: 3px;
+                    a {
+                        width: 94%;
+                        margin: 0 3%;
+                        display: block;
+                        &:after {
+                            margin-right: 7%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

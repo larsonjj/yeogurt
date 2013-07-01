@@ -1,0 +1,24 @@
+/* language-selector.scss
+** Language-Selector Sass file that will be used to declare it's styles
+*/
+
+// Only for desktop (not mobile)
+@media screen and (min-width: $small-screen) {
+
+    form.language-selector-container {
+        padding-top: 5px;
+    }
+
+    form.language-selector-container .custom.dropdown {
+        margin: 3px 0 -5px;
+        height: 30px;
+    }
+
+    form.language-selector-container .custom.dropdown a {
+        text-transform: uppercase;
+        font-family: 'gothamrnd-book', Arial;
+        color: #9D9D9B;
+        font-size: 11px;
+        margin-top: 3px;
+    }
+}

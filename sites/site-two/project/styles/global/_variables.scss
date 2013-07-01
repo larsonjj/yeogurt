@@ -1,0 +1,86 @@
+/* _variables.scss
+** Declare all variables within this file
+ */
+/* Author Custom Variables */
+
+/* Foundation Variable Overrides */
+$row-width: 960px;
+$column-gutter: 0;
+$small-screen: 960px;
+$body-font-family: 'gothamrnd-book', Arial, sans-serif;
+
+// Top Bar Overrides
+//
+/* Background color for the top bar */
+$topbar-bg: #959595;
+
+/* Height and margin */
+$topbar-height: 41px;
+$topbar-margin-bottom: emCalc(30px);
+
+/* Control Input height for top bar */
+$topbar-input-height: 2.45em;
+
+/* Controlling the styles for the title in the top bar */
+$topbar-title-weight: bold;
+$topbar-title-font-size: 14px;
+
+/* Style the top bar dropdown elements */
+$topbar-dropdown-bg: #222;
+$topbar-dropdown-link-color: #fff;
+$topbar-dropdown-link-bg: lighten($topbar-bg, 5%);
+$topbar-dropdown-toggle-size: 5px;
+$topbar-dropdown-toggle-color: #fff;
+$topbar-dropdown-toggle-alpha: 0.5;
+
+/* Set the link colors and styles for top-level nav */
+$topbar-link-color: #fff;
+$topbar-link-color-hover: #fff;
+$topbar-link-color-active: #fff;
+$topbar-link-weight: bold;
+$topbar-link-font-size: 13px;
+$topbar-link-hover-lightness: -30%; /* Darken by 30% */
+$topbar-link-bg-hover: #343434;
+$topbar-link-bg-active: #343434;
+
+$topbar-dropdown-label-color: #555;
+$topbar-dropdown-label-text-transform: uppercase;
+$topbar-dropdown-label-font-weight: bold;
+$topbar-dropdown-label-font-size: 10px;
+
+/* Top menu icon styles */
+$topbar-menu-link-transform: uppercase;
+$topbar-menu-link-font-size: 13px;
+$topbar-menu-link-weight: bold;
+$topbar-menu-link-color: #fff;
+$topbar-menu-icon-color: #989898;
+$topbar-menu-link-color-toggled: #888;
+$topbar-menu-icon-color-toggled: #f3f3f3;
+
+/* Transitions and breakpoint styles */
+$topbar-transition-speed: 300ms;
+$topbar-breakpoint: 960px; /* Change to 9999px for always mobile layout */
+$topbar-media-query: "only screen and (min-width:"#{$topbar-breakpoint}")";
+
+$topbar-dropdown-header-color: $topbar-link-bg-hover;
+
+
+// Typography Overrides
+
+/* We use these to control header font styles */
+$header-font-family: 'gothamrnd-book', Arial, sans-serif;
+$header-font-weight: bold;
+$header-font-style: normal;
+$header-font-color: #575756;
+$header-line-height: 1.4;
+$header-top-margin: .4em;
+$header-bottom-margin: .3em;
+$header-text-rendering: optimizeLegibility;
+
+/* We use these to control header font sizes */
+$h1-font-size: emCalc(40px);
+$h2-font-size: emCalc(37px);
+$h3-font-size: emCalc(27px);
+$h4-font-size: emCalc(23px);
+$h5-font-size: emCalc(18px);
+$h6-font-size: 1em;
