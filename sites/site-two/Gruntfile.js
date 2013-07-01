@@ -237,23 +237,34 @@ module.exports = function (grunt) {
             }
         },
         compass: {
-            options: {
-                sassDir: '<%= yeoman.project %>/styles',
-                cssDir: '.tmp/styles',
-                generatedImagesDir: '.tmp/images/generated',
-                imagesDir: '<%= yeoman.project %>/images',
-                javascriptsDir: '<%= yeoman.project %>/scripts',
-                fontsDir: '<%= yeoman.project %>/styles/fonts',
-                importPath: '<%= yeoman.project %>/bower_components',
-                httpImagesPath: '/images',
-                httpGeneratedImagesPath: '/images/generated',
-                httpFontsPath: '/styles/fonts',
-                relativeAssets: true
+            dist: {
+                options: {
+                    sassDir: '<%= yeoman.project %>/styles',
+                    cssDir: '.tmp/styles',
+                    generatedImagesDir: '.tmp/images/generated',
+                    imagesDir: '<%= yeoman.project %>/images',
+                    javascriptsDir: '<%= yeoman.project %>/scripts',
+                    fontsDir: '<%= yeoman.project %>/styles/fonts',
+                    importPath: '<%= yeoman.project %>/bower_components',
+                    httpImagesPath: '/images',
+                    httpGeneratedImagesPath: '/images/generated',
+                    httpFontsPath: '/styles/fonts',
+                    relativeAssets: true
+                }
             },
-            dist: {},
             server: {
                 options: {
-                    debugInfo: false
+                    sassDir: '<%= yeoman.project %>/styles',
+                    cssDir: '.tmp/styles',
+                    generatedImagesDir: '.tmp/images/generated',
+                    imagesDir: '<%= yeoman.project %>/images',
+                    javascriptsDir: '<%= yeoman.project %>/scripts',
+                    fontsDir: '<%= yeoman.project %>/styles/fonts',
+                    importPath: '<%= yeoman.project %>/bower_components',
+                    httpImagesPath: '/images',
+                    httpGeneratedImagesPath: '/images/generated',
+                    httpFontsPath: '/styles/fonts',
+                    relativeAssets: false
                 }
             }
         },
@@ -430,7 +441,7 @@ module.exports = function (grunt) {
             server: [
                 'jade:test',
                 'jade:testTwo',
-                'compass',
+                'compass:server',
                 'coffee:dist'
             ],
             test: [
@@ -443,7 +454,7 @@ module.exports = function (grunt) {
                 'jade:dist',
                 'jade:distTwo',
                 'coffee',
-                'compass',
+                'compass:dist',
                 'uglify',
                 'imagemin',
                 'svgmin',
