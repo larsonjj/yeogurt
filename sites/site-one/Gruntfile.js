@@ -237,23 +237,34 @@ module.exports = function (grunt) {
             }
         },
         compass: {
-            options: {
-                sassDir: '<%= yeoman.project %>/styles',
-                cssDir: '.tmp/styles',
-                generatedImagesDir: '.tmp/images/generated',
-                imagesDir: '<%= yeoman.project %>/images',
-                javascriptsDir: '<%= yeoman.project %>/scripts',
-                fontsDir: '<%= yeoman.project %>/styles/fonts',
-                importPath: '<%= yeoman.project %>/bower_components',
-                httpImagesPath: '/images',
-                httpGeneratedImagesPath: '/images/generated',
-                httpFontsPath: '/styles/fonts',
-                relativeAssets: true
+            dist: {
+                options: {
+                    sassDir: '<%= yeoman.project %>/styles',
+                    cssDir: '.tmp/styles',
+                    generatedImagesDir: '.tmp/images/generated',
+                    imagesDir: '<%= yeoman.project %>/images',
+                    javascriptsDir: '<%= yeoman.project %>/scripts',
+                    fontsDir: '<%= yeoman.project %>/styles/fonts',
+                    importPath: '<%= yeoman.project %>/bower_components',
+                    httpImagesPath: '/projects/live-positively/dist/images',
+                    httpGeneratedImagesPath: '/projects/live-positively/dist/images/generated',
+                    httpFontsPath: '/styles/fonts',
+                    relativeAssets: false
+                }
             },
-            dist: {},
             server: {
                 options: {
-                    debugInfo: false
+                    sassDir: '<%= yeoman.project %>/styles',
+                    cssDir: '.tmp/styles',
+                    generatedImagesDir: '.tmp/images/generated',
+                    imagesDir: '<%= yeoman.project %>/images',
+                    javascriptsDir: '<%= yeoman.project %>/scripts',
+                    fontsDir: '<%= yeoman.project %>/styles/fonts',
+                    importPath: '<%= yeoman.project %>/bower_components',
+                    httpImagesPath: '/images',
+                    httpGeneratedImagesPath: '/images/generated',
+                    httpFontsPath: '/styles/fonts',
+                    relativeAssets: false
                 }
             }
         },
