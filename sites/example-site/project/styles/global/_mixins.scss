@@ -1,0 +1,9 @@
+/* _mixins.scss
+** Declare all mixins within this file
+ */
+
+@mixin block-center {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}

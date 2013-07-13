@@ -12,9 +12,9 @@ module.exports = function (grunt) {
                 src: ['./sites/{,*/}/Gruntfile.js'],
                 tasks: ['server']
             },
-            sftp: {
+            deploy: {
                 src: ['./sites/{,*/}/Gruntfile.js'],
-                tasks: ['sftp']
+                tasks: ['deploy']
             }
         }
     });
@@ -24,7 +24,7 @@ module.exports = function (grunt) {
     grunt.registerTask('server', [
         'hub:server'
     ]);
-    grunt.registerTask('sftp', [
-        'hub:sftp'
+    grunt.registerTask('deploy', [
+        'hub:deploy'
     ]);
 };

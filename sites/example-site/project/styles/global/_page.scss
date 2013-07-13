@@ -1,0 +1,30 @@
+/* page.scss
+** Page Sass file that will be used to set all page level styles
+*/
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+}
+
+.container {
+    @include block-center;
+    max-width: $row-width;
+}
+
+.text-align-center {
+    text-align: center;
+}
+
+.text-align-left {
+    text-align: left;
+}
+
+.fluid {
+    width: 100%;
+}

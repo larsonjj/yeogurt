@@ -1,0 +1,11 @@
+/* _horizontal-rule.scss
+** horizontal-rule Sass file that will be used to import all other components
+*/
+
+.horizontal-rule {
+    width: 100%;
+    border-top: 2px solid #e8e8ea;
+    border-bottom: 1px solid #fff;
+    border-left: 0 none;
+    border-right: 0 none;
+}

@@ -1,0 +1,17 @@
+/* main.scss
+** Main Sass file that will be used to import all author components
+*/
+
+/* Import Globals */
+@import 'global/_variables';
+@import 'global/_mixins';
+@import 'global/fonts';
+@import 'global/_page';
+@import 'global/_ie8-grid';
+@import 'global/_ie8-fixes';
+
+/* Import Components */
+@import 'components/_fixed-grid';
+@import 'components/_custom-select';
+@import 'components/_horizontal-rule';
+@import 'components/_font-icons';
