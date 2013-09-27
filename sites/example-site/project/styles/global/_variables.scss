@@ -7,13 +7,10 @@
 // Font-Awesome Overrides
 $FontAwesomePath: "../styles/fonts/font-awesome/font";
 
-/* Foundation Variable Overrides */
-$total-columns: 12;
-$row-width: 960px;
-$column-gutter: 0;
-$small-screen: 960px; // Breakpoint (Media Query)
-
 // Typography Overrides
-
-/* Body text */
 $body-font-family: Helvetica, Arial, sans-serif;
+
+// Color Pallete
+$font-color-primary: #50555f;
+$font-color-primary: #ededed;
+$font-color-white: #fff;

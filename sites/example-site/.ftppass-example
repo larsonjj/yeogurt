@@ -1,8 +1,0 @@
-{
-    "host": "someurl.com",
-    "serverPath": "/dist",
-    "key1": {
-        "username": "username",
-        "password": "password"
-      }
-}
