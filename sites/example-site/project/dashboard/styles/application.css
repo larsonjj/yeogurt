@@ -1,0 +1,479 @@
+/* RESET */
+
+body, div, dl, dt, dd, th, td, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, p, embed, object {
+    margin:0;
+    padding:0;
+}
+
+address, caption, cite, code, em, h1, h2, h3, h4, h5, h6, strong, var {
+    font-style:normal;
+    font-weight:normal;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size:1em;
+}
+
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+    height:auto;
+}
+
+fieldset, img, abbr {
+    border:0 none;
+}
+
+fieldset {
+
+}
+
+img, input, select, label {
+    vertical-align:middle;
+}
+
+ul {
+    list-style:none outside none;
+}
+
+caption, div, span {
+    text-align:left;
+}
+
+a, ins {
+    text-decoration:none;
+}
+
+
+
+/* DEFAULTS */
+
+body {
+    background-color: #fff;
+    color: #666;
+    font: normal 12px/1.2em "Helvetica Neue", Helvetica, Arial, sans-serif;
+    min-height: 416px;
+    -webkit-text-size-adjust: none;
+}
+
+ul {
+    list-style: none;
+    margin-bottom: 2em;
+}
+
+ul li {
+    margin-bottom: 1px;
+    padding: 2px 0;
+    color: #666;
+}
+
+dl {
+    margin-bottom: 2em;
+}
+
+dl dt {
+    font-size: 12px;
+    margin-bottom: .3em;
+}
+
+dl dd {
+    font-size: 10px;
+    margin-bottom: .6em;
+    margin-left: 1em;
+}
+
+img {
+    -ms-interpolation-mode: bicubic;
+}
+
+a {
+    color: #666;
+    text-decoration: none;
+}
+
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+.left{
+    float: left;
+}
+
+.right{
+    float: right;
+}
+
+
+
+/* LAYOUT */
+
+#container {
+    margin: 0 auto;
+    background-color: #fff;
+    max-width: 800px;
+    padding: 10px 0px;
+    *padding: 20px 0px;
+
+    /* branding logo
+    background: url(../images/branding/motorola-logo.png) no-repeat right 6px;
+         */
+}
+
+header {
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 2em;
+    position: relative;
+}
+
+#content {
+    float: left;
+    width: 60%;
+    margin-bottom: 2em;
+}
+
+#sidebar {
+    float: right;
+    width: 35%;
+    margin-bottom: 2em;
+}
+
+footer {
+    background: url(../images/branding/acquity-group-logo.png) no-repeat 0 60%;
+    border-top: 1px solid #ccc;
+    clear: both;
+    margin-bottom:50px;
+    padding: 16px 0 14px;
+    text-align: right;
+    width: 100%;
+}
+
+/* HEADER */
+
+header h1 {
+    margin-top: 1em;
+    text-align: center;
+    font-weight: normal;
+}
+
+header h1 img {
+    display: block;
+    margin: 0 auto;
+}
+
+
+header h1 a span {
+    margin: 1em 0;
+    display:block;
+    font-size: 1.6em;
+    text-transform: uppercase;
+    font-family: Helvetica, Arial, sans-serif;
+    letter-spacing: .3em;
+    display: block;
+}
+
+
+
+/* CONTENT */
+
+#content h2 {
+    font-size: 18px;
+    padding: 10px 0 5px;
+    text-transform: uppercase;
+    font-weight: normal;
+    text-shadow: 1px 1px 1px #ccc;
+}
+
+.projectlist {
+    margin-bottom: 20px;
+}
+
+.projectlist li {
+    font-size: 16px;
+    line-height: 20px;
+    margin-bottom: 2px;
+    padding: 3px 0;
+}
+
+.projectlist li a {
+    padding-left: 3px;
+    white-space: nowrap;
+}
+
+.projectlist li a.image {
+    background:url(../images/image-icon.gif) no-repeat;
+    width:14px;
+    height:18px;
+    text-indent: -99999px;
+    margin-top:1px;
+    padding:0px 5px 0px 0px;
+    display: block;
+}
+
+.projectlist li span {
+    background-color: #fff;
+    width: 40px;
+    float: left;
+    text-align: center;
+    margin: 0px 5px 0px 0;
+}
+
+.projectlist li a.item-design {
+    margin-right:-3px;
+}
+
+.projectlist li p {
+    float:right;
+    font-size:11px;
+}
+
+.projectlist li a.item-design span {
+    background-color: #fff;
+    display: block;
+    padding:0 5px 0px 6px;
+    text-align: center;
+    width: 11px !important;
+}
+
+.projectlist li a:after,
+.projectlist li:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+.queued,
+.development,
+.fedqa,
+.integration,
+.live {
+    color: #fff;
+    font-weight: bold;
+}
+
+    .queued,
+    .queued i div,
+    .queued i span {
+        background: #ddd;
+    }
+
+    .queued span {
+        color: #ddd;
+    }
+
+    .development,
+    .development i div,
+    .development i span {
+        background: #50aec3;
+    }
+
+    .development span {
+        color: #50aec3;
+    }
+
+    .fedqa,
+    .fedqa i div,
+    .fedqa i span {
+        background: #578c93;
+    }
+
+    .fedqa span {
+        color: #578c93;
+    }
+
+    .integration,
+    .integration i div,
+    .integration i span {
+        background: #2871a8;
+    }
+
+    .integration span {
+        color: #2871a8;
+    }
+
+    .live,
+    .live i div,
+    .live i span {
+        background: #154e8a;
+    }
+
+    .live span {
+        color: #154e8a;
+    }
+
+.queued a,
+.fedqa a,
+.development a,
+.integration a,
+.live a {
+    color: #fff;
+}
+
+.group {
+    margin-top:10px;
+}
+
+
+
+/* SIDEBAR */
+
+#sidebar div {
+    margin-bottom: 24px;
+}
+
+#sidebar h2 {
+    color: #578c93;
+    font-size: 12px;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 1px #ccc;
+}
+
+#sidebar a {
+    color: #000;
+    text-decoration: underline;
+}
+
+#legend ul {}
+
+
+#legend ul li {
+    font-size: 11px;
+    font-weight: normal;
+    margin-bottom: 2px;
+    padding: 4px 6px;
+}
+
+#team ul li,
+#tools ul li,
+#deliverables ul li {
+    font-size: 11px;
+    margin-bottom:2px;
+    padding: 3px 6px 4px 6px;
+}
+
+#legend ul li a {
+    color:#fff;
+    display:block;
+    width:100%;
+    text-transform: uppercase;
+}
+
+#tools {
+    margin-bottom: 25px;
+}
+
+#last-updated,
+#description {
+    margin-bottom: 25px;
+}
+
+#description p {
+    font-size: 11px;
+}
+
+#deliverables,
+#team {
+    margin-bottom: 20px;
+}
+
+
+#team a {
+}
+
+
+#inputs {
+    margin-bottom: 20px;
+}
+
+#inputs dt {
+    font-weight: bold;
+}
+
+
+
+/* FOOTER */
+
+footer small {
+    color: #4d4d4d;
+}
+
+
+
+/* FORM FACTOR */
+
+/* MS landscape */
+
+@media only screen and (max-device-width:480px) {
+
+    .projectlist li{
+        font-size:12px;
+    }
+
+    #container{
+        margin:0px 10px;
+    }
+}
+
+/* MS landscape */
+
+@media only screen and (max-device-width:480px) {
+
+    .projectlist li{
+        font-size:12px;
+    }
+
+    #container{
+        margin:0px 10px;
+    }
+}
+
+/* SS landscape */
+
+@media only screen and (max-device-width:480px) {
+
+    .projectlist li{
+        font-size:12px;
+    }
+
+    #container{
+        margin:0px 10px;
+    }
+}
+
+/* SS Portrait */
+
+@media only screen and (max-device-width:400px) {
+
+    #content,
+    #sidebar {
+        float: none;
+        width: auto;
+    }
+
+    #sidebar {
+        margin-top: 25px;
+    }
+
+    .projectlist li{
+        font-size:12px;
+    }
+
+    #container{
+        margin:0px 10px;
+    }
+}
+
+
+/* HIGH RES */
+
+@media only screen and (min-device-pixel-ratio: 2), only screen and (-webkit-min-device-pixel-ratio: 2) {
+
+
+}
+
