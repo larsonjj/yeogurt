@@ -264,15 +264,19 @@ module.exports = function (grunt) {
                 options: {
                     compress: true,
                     report: 'min',
-                    sourceMap: function(name) {
-                        return name + '.map';
-                    }
+                    mangle: false
                 },
                 files: [{
                     expand: true,
                     src: '*.js',
                     dest: '.tmp/scripts/components/',
                     cwd: '<%= yeoman.project %>/scripts/components/',
+                    ext: '.js'
+                }, {
+                    expand: true,
+                    src: 'require.js',
+                    dest: '<%= yeoman.dist %>/bower_components/requirejs/',
+                    cwd: '<%= yeoman.project %>/bower_components/requirejs/',
                     ext: '.js'
                 }]
             }
@@ -286,13 +290,15 @@ module.exports = function (grunt) {
                     optimize: 'uglify2',
                     // TODO: Figure out how to make sourcemaps work with grunt-usemin
                     // https://github.com/yeoman/grunt-usemin/issues/30
-                    generateSourceMaps: true,
+                    generateSourceMaps: false,
                     // required to support SourceMaps
                     // http://requirejs.org/docs/errors.html#sourcemapcomments
                     preserveLicenseComments: false,
                     useStrict: true,
-                    wrap: true
-                    //uglify2: {} // https://github.com/mishoo/UglifyJS2
+                    wrap: true,
+                    uglify2: {
+                        mangle: false
+                    } // https://github.com/mishoo/UglifyJS2
                 }
             }
         },
@@ -310,7 +316,8 @@ module.exports = function (grunt) {
         },
         useminPrepare: {
             options: {
-                dest: '<%= yeoman.dist %>/scripts/global'
+                dest: '<%= yeoman.dist %>/scripts/global',
+                uglify: 'none'
             },
             html: '<%= yeoman.project %>/html/pages/index.html'
         },
@@ -451,20 +458,6 @@ module.exports = function (grunt) {
         }
     });
 
-    // Patch for allowing sourcemaps
-    grunt.registerTask('useminPatch', function () {
-        var concat = grunt.config('concat');
-        var uglify = grunt.config('uglify');
-        for (var dest in concat) {
-            if (uglify[dest] === dest) {
-                uglify[dest] = concat[dest];
-                delete concat[dest];
-            }
-        }
-        grunt.config('concat', concat);
-        grunt.config('uglify', uglify);
-    });
-
     grunt.registerTask('server', function (target) {
         if (target === 'dist') {
             return grunt.task.run(['build', 'open', 'connect:dist:keepalive']);
@@ -503,7 +496,6 @@ module.exports = function (grunt) {
         'jade:dist',
         'jade:distTwo',
         'useminPrepare',
-        'useminPatch',
         'concurrent:dist',
         'autoprefixer',
         'requirejs',

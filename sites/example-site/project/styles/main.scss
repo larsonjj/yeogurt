@@ -2,12 +2,18 @@
 ** Main Sass file that will be used to import all author components
 */
 
+/* Import Bootstrap Mixins */
+@import '../bower_components/sass-bootstrap/lib/_mixins';
+
 /* Import Globals */
 @import 'global/_variables';
 @import 'global/_mixins';
 @import 'global/fonts';
 @import 'global/_page';
 @import 'global/_ie8-fixes';
+
+/* Uncomment Below to disable responsiveness of Bootstrap 3.0 */
+// @import 'global/_bootstrap-disable-responsive';
 
 /* Import Components */
 

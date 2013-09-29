@@ -1,4 +1,16 @@
 define([], function() {
     'use strict';
-    return 'Welcome to Yeogurt!';
+    return {
+        win8IE10Fix: function() {
+            if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
+                var msViewportStyle = document.createElement('style');
+                msViewportStyle.appendChild(
+                    document.createTextNode(
+                    '@-ms-viewport{width:auto!important}'
+                    )
+                );
+                document.getElementsByTagName('head')[0].appendChild(msViewportStyle);
+            }
+        }
+    };
 });

@@ -8,9 +8,38 @@
 $FontAwesomePath: "../styles/fonts/font-awesome/font";
 
 // Typography Overrides
-$body-font-family: Helvetica, Arial, sans-serif;
+$font-family-sans-serif:  "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family-serif:       Georgia, "Times New Roman", Times, serif;
+$font-family-monospace:   Monaco, Menlo, Consolas, "Courier New", monospace;
+$font-family-base:        $font-family-sans-serif;
+
+$font-size-base:          14px;
+$font-size-large:         ceil($font-size-base * 1.25); // ~18px
+$font-size-small:         ceil($font-size-base * 0.85); // ~12px
+
+$line-height-base:        1.428571429; // 20/14
+$line-height-computed:    floor($font-size-base * $line-height-base); // ~20px
+
+$headings-font-family:    $font-family-base;
+$headings-font-weight:    500;
+$headings-line-height:    1.1;
+
+/* Breakpoint Overrides */
+// Extra small screen / phone
+$screen-xs:                  480px;
+$screen-phone:               $screen-xs;
+
+// Small screen / tablet
+$screen-sm:                  768px;
+$screen-tablet:              $screen-sm;
+
+// Medium screen / desktop
+$screen-md:                  960px; // BS3.0 Default: 992px
+$screen-desktop:             $screen-md;
+
+// Large screen / wide desktop
+$screen-lg:                  1200px;
+$screen-lg-desktop:          $screen-lg;
 
 // Color Pallete
-$font-color-primary: #50555f;
-$font-color-primary: #ededed;
-$font-color-white: #fff;
+

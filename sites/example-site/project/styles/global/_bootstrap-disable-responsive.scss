@@ -1,0 +1,7 @@
+/* Disable the responsivness of Bootstrap
+*/
+
+.container {
+    max-width: none !important;
+    width: $screen-md;
+}

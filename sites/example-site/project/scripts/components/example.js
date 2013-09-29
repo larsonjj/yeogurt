@@ -2,7 +2,7 @@
 'use strict';
 
 // Asyncronous with module loading
-require(['domReady', 'jquery', 'orbit'], function(domReady, $) {
+require(['domReady', 'jquery'], function(domReady, $) {
     domReady(function() {
         console.log($('body'));
     });
