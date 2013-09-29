@@ -1,8 +1,18 @@
-// Templates require head, header, and footer components
-// Within header and footer components, add block for specified content
+//- Templates require head component to be included first
+//- Also required are the header and footer blocks:
+//- This will allow pages that extend this layout to load different -
+//- headers and footers if need be.
 
 include ../components/head
-include ../components/header
+    // Start of Header Component
+    block header
+    // End of Header Component
+
+    // Start of One-Column Content
     .one-col-content
         block one-col-content
-include ../components/footer
+    // End of One-Column Content
+
+    // Start of Footer Component
+    block footer
+    // End of Footer Component

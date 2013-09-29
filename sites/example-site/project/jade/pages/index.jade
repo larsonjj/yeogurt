@@ -1,5 +1,12 @@
 extends ../templates/one-col
 
+block header
+    include ../components/header
+
 block one-col-content
     p Hello!
     img(src="../../images/ameriFlag.jpg")
+    i.icon-chevron-right
+
+block footer
+    include ../components/footer

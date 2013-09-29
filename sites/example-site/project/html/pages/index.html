@@ -1,6 +1,4 @@
-
-<!-- Templates require head, header, and footer components-->
-<!-- Within header and footer components, add block for specified content--><!DOCTYPE html><!--[if IE 8]><html class="no-js lt-ie9"><![endif]-->
+<!DOCTYPE html><!--[if IE 8]><html class="no-js lt-ie9"><![endif]-->
 <!--[if gt IE 8]><!-->
 <html class="no-js">
   <!--<![endif]-->
@@ -11,24 +9,25 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory-->
-    <link rel="stylesheet" href="../../styles/main.css"><!--[if lt IE 9]>
-    <script>
-      document.createElement('header');
-      document.createElement('nav');
-      document.createElement('section');
-      document.createElement('article');
-      document.createElement('aside');
-      document.createElement('footer');
-      document.createElement('hgroup');
-    </script><![endif]-->
-    <!-- build:js scripts/global/main.js-->
+    <link rel="stylesheet" href="../../styles/main.css">
+    <!--if lt IE 9-->
+    <script src="../../bower_components/respond/respond.min.js"></script>
+    <script src="../../bower_components/html5shiv/dist/html5shiv.js"></script>
+    <!-- build:js main.js-->
     <script data-main="../../scripts/global/main" src="../../bower_components/requirejs/require.js"></script>
     <!-- endbuild-->
   </head>
-  <body></body>
+  <body>
+    <!-- Start of Header Component-->
+    <header class="header-container"></header>
+    <!-- End of Header Component-->
+    <!-- Start of One-Column Content-->
+    <div class="one-col-content">
+      <p>Hello!</p><img src="../../images/ameriFlag.jpg"><i class="icon-chevron-right"></i>
+    </div>
+    <!-- End of One-Column Content-->
+    <!-- Start of Footer Component-->
+    <footer class="footer-container"></footer>
+    <!-- End of Footer Component-->
+  </body>
 </html>
-<header class="header-container"></header>
-<div class="one-col-content">
-  <p>Hello!</p><img src="../../images/ameriFlag.jpg">
-</div>
-<footer class="footer-container"></footer>
