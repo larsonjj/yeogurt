@@ -53,13 +53,14 @@ module.exports = function (grunt) {
                 ]
             }
         },
+        svninfo: {},
         // gzip assets 1-to-1 for production
         compress: {
             main: {
                 options: {
                     mode: 'zip',
                     pretty: true,
-                    archive: '<%= yeoman.project %>/../dist/live-positively.zip'
+                    archive: '<%= yeoman.project %>/../dist/<% svninfo.rev %>.zip'
                 },
                 expand: true,
                 cwd: '<%= yeoman.project %>/../dist',
@@ -521,10 +522,15 @@ module.exports = function (grunt) {
         'test:building'
     ]);
 
-    grunt.registerTask('deploy', [
-        'build',
-        'test',
-        'compress',
-        'ftp-deploy'
-    ]);
+    grunt.registerTask('deploy', function (target) {
+        if (target === 'svn') {
+            grunt.task.run(['svninfo']);
+        }
+        grunt.task.run ([
+            'build',
+            'test',
+            'compress',
+            'ftp-deploy'
+        ]);
+    });
 };

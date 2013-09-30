@@ -20,6 +20,7 @@
     "grunt-contrib-watch": "~0.4.0",
     "grunt-contrib-compress": "~0.5.2",
     "grunt-jade": "~0.4.0",
+    "grunt-svninfo": "~0.1.2",
     "grunt-ftp-deploy": "~0.0.9",
     "grunt-rev": "~0.1.0",
     "grunt-autoprefixer": "~0.1.20130516",
