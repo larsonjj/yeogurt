@@ -60,7 +60,7 @@ module.exports = function (grunt) {
                 options: {
                     mode: 'zip',
                     pretty: true,
-                    archive: '<%= yeoman.project %>/../dist/<% svninfo.rev %>.zip'
+                    archive: '<%= yeoman.project %>/../dist/svn-r<%= svninfo.rev %>.zip'
                 },
                 expand: true,
                 cwd: '<%= yeoman.project %>/../dist',
