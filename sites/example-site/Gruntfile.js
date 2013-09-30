@@ -493,12 +493,14 @@ module.exports = function (grunt) {
 
         grunt.task.run([
             'concurrent:test',
-            'connect:test',
-            'mocha'
+            'connect:test'
         ]);
 
         if (target === 'open') {
-            grunt.task.run(['open']);
+            grunt.task.run(['open','mocha']);
+        }
+        else {
+            grunt.task.run(['mocha']);
         }
     });
 
