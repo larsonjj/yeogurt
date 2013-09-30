@@ -497,7 +497,7 @@ module.exports = function (grunt) {
             'mocha'
         ]);
 
-        if (!target) {
+        if (target === 'open') {
             grunt.task.run(['open']);
         }
     });
