@@ -21,7 +21,6 @@ require(['jquery', 'domReady', 'app', 'modernizr'], function($, domReady, app) {
     * app.win8IE10Fix() solves this issue (http://getbootstrap.com/getting-started/#browsers)
      */
     app.win8IE10Fix();
-
     domReady(function() {
         // Place Code Here
     });

@@ -29,7 +29,7 @@ module.exports = function (grunt) {
                 nospawn: false
             },
             jade: {
-                files: ['<%= yeoman.project %>/jade/{,*/}*.jade'],
+                files: ['<%= yeoman.project %>/jade/{,*/}{,*/}*.jade'],
                 tasks: ['jade:test', 'jade:testTwo']
             },
             compass: {
@@ -107,9 +107,6 @@ module.exports = function (grunt) {
         },
         open: {
             server: {
-                path: 'http://localhost:<%= connect.options.port %>/'
-            },
-            test: {
                 path: 'http://localhost:<%= connect.options.port %>/'
             }
         },
@@ -470,7 +467,7 @@ module.exports = function (grunt) {
             'concat',
             'autoprefixer',
             'connect:livereload',
-            'open',
+            'open:server',
             'watch'
         ]);
     });
@@ -487,7 +484,7 @@ module.exports = function (grunt) {
         ]);
 
         if (!target) {
-            grunt.task.run(['open:test']);
+            grunt.task.run(['open']);
         }
     });
 
