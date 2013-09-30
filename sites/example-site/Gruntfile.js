@@ -53,6 +53,19 @@ module.exports = function (grunt) {
                 ]
             }
         },
+        // gzip assets 1-to-1 for production
+        compress: {
+            main: {
+                options: {
+                    mode: 'zip',
+                    pretty: true,
+                    archive: '<%= yeoman.project %>/../dist/live-positively.zip'
+                },
+                expand: true,
+                cwd: '<%= yeoman.project %>/../dist',
+                src: ['*/**']
+            }
+        },
         // don't keep passwords in source control
         secret: grunt.file.readJSON('.ftppass'),
         'ftp-deploy': {
@@ -511,6 +524,7 @@ module.exports = function (grunt) {
     grunt.registerTask('deploy', [
         'build',
         'test',
+        'compress',
         'ftp-deploy'
     ]);
 };
