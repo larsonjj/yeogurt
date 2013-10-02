@@ -24,10 +24,10 @@ Yeogurt is a multi-site, front-end build framework that automates many repetitiv
 
 ## Get the files
 
-There are 2 Options:
+There are two options:
 
-1. Download the latest [build](https://github.com/larsonjj/yeogurt/archive/master.zip).
-2. Clone the git repo — git clone https://github.com/larsonjj/yeogurt.git.
+- Download the latest [build](https://github.com/larsonjj/yeogurt/archive/master.zip).
+- Clone the git repo — git clone https://github.com/larsonjj/yeogurt.git.
 
 ## Prerequisites
 1. [Ruby](https://www.ruby-lang.org/en/) (OSX: install [Xcode](https://itunes.apple.com/us/app/xcode/id497799835?mt=12) from Mac App Store along with the Command Line Tools plugin. Windows: [Ruby Installer](http://rubyinstaller.org/downloads))
