@@ -42,9 +42,9 @@ Once all the prerequisites are installed, you'll need to run the setup shell scr
 2. Install Node if you don't already have it.
 3. Download/Install needed Ruby gems
 4. Download/Install needed Node Packages
-5. Download/Install needed bower dependencies
+5. Download/Install needed Bower dependencies
 
-To run the script, navigate to the yeogurt folder and run in this command in terminal:
+To run the script, navigate to the yeogurt/ folder and run in this command in terminal:
 ```bash
 ./install.sh
 ```
