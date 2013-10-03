@@ -1,3 +1,8 @@
 // Reset
 @import "../../bower_components/sass-bootstrap/lib/_normalize";
+
+// Bootstrap Components
+@import "../../bower_components/sass-bootstrap/lib/_variables";
+@import "../../bower_components/sass-bootstrap/lib/_mixins";
+
 @import 'global/application';
