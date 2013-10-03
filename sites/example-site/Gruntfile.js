@@ -87,7 +87,7 @@ module.exports = function (grunt) {
                 },
                 src: '<%= yeoman.dist %>',
                 dest: '<%= secret.serverPath %>',
-                exclusions: ['*.svn', '.svn/'],
+                exclusions: ['*.svn', '.svn/', '.svn'],
                 server_sep: '/'
             }
         },
