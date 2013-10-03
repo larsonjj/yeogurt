@@ -1,2 +1,12 @@
 node_modules
 Gemfile.lock
+sites/example-site/node_modules
+sites/example-site/dist
+sites/example-site/.tmp
+sites/example-site/.sass-cache
+sites/example-site/.ftppass
+sites/example-site/project/bower_components
+sites/example-site/project/html
+sites/example-site/project/*.html
+sites/example-site/project/dashboard/*.html
+sites/example-site/project/dashboard/styles/*.css

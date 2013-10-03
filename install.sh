@@ -19,7 +19,7 @@ function runAfterBower {
         echo -e "${RED}This is not an SVN Repository!${RESTORE}";
         echo -e "${RED}Skipping SVN setup...${RESTORE}";
     else
-        svn propset svn:ignore -F .svnignore . && cd sites/example-site && svn propset svn:ignore -F .svnignore .;
+        svn propset svn:ignore -F .svn_ignore . && cd sites/select-comfort && svn propset svn:ignore -F .svn_ignore . && cd project && svn propset svn:ignore -F .svn_ignore . && cd dashboard && svn propset svn:ignore -F .svn_ignore . && cd styles && svn propset svn:ignore -F .svn_ignore . && cd ../../../../../;
         if [ $? -eq 0 ]; then
             echo -e "${RED}An Error occured when trying to setup SVN ignores${RESTORE}";
             echo "Please try remedying any errors and run this script again."

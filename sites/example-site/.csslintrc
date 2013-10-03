@@ -12,5 +12,6 @@
     "font-sizes"                  : false,
     "regex-selectors"             : false,
     "unqualified-attributes"      : false,
-    "compatible-vendor-prefixes"  : false
+    "compatible-vendor-prefixes"  : false,
+    "universal-selector"          : false
 }

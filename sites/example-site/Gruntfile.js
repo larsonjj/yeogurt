@@ -30,11 +30,19 @@ module.exports = function (grunt) {
             },
             jade: {
                 files: ['<%= yeoman.project %>/jade/{,*/}{,*/}*.jade'],
-                tasks: ['jade:test', 'jade:testTwo']
+                tasks: ['jade:pages', 'jade:components']
+            },
+            jadeDashboard: {
+                files: ['<%= yeoman.project %>/dashboard/{,*/}{,*/}*.jade'],
+                tasks: ['jade:dashboard']
             },
             compass: {
                 files: ['<%= yeoman.project %>/styles/{,*/}*.{scss,sass}'],
                 tasks: ['compass:server', 'autoprefixer', 'concat:dist' ]
+            },
+            compassDashboard: {
+                files: ['<%= yeoman.project %>/dashboard/{,*/}{,*/}*.{scss,sass}'],
+                tasks: ['compass:dashboard', 'autoprefixer:dashboard' ]
             },
             styles: {
                 files: ['<%= yeoman.project %>/styles/{,*/}*.css'],
@@ -49,6 +57,7 @@ module.exports = function (grunt) {
                     '<%= yeoman.project %>/html/{,*/}*.html',
                     '.tmp/styles/{,*/}*.css',
                     '{.tmp,<%= yeoman.project %>}/scripts/{,*/}*.js',
+                    '<%= yeoman.project %>/dashboard/scripts/{,*/}*.js',
                     '<%= yeoman.project %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
                 ]
             }
@@ -124,6 +133,15 @@ module.exports = function (grunt) {
                 path: 'http://localhost:<%= connect.options.port %>/'
             }
         },
+        markdown: {
+            all: {
+                files: [
+                    {
+                        '<%= yeoman.project %>/index.html': '<%= yeoman.project %>/*.md'
+                    }
+                ]
+            }
+        },
         clean: {
             dist: {
                 files: [{
@@ -165,12 +183,12 @@ module.exports = function (grunt) {
             all: {
                 options: {
                     run: true,
-                    urls: ['http://localhost:<%= connect.options.port %>/p001-homepage.html']
+                    urls: ['http://localhost:<%= connect.options.port %>/index.html']
                 }
             }
         },
         jade: {
-            test: {
+            pages: {
                 options: {
                     pretty: true,
                     client: false,
@@ -181,7 +199,7 @@ module.exports = function (grunt) {
                 dest: '<%= yeoman.project %>/html/pages/',
                 src: ['<%= yeoman.project %>/jade/pages/*.jade']
             },
-            testTwo: {
+            components: {
                 options: {
                     pretty: true,
                     client: false,
@@ -192,7 +210,18 @@ module.exports = function (grunt) {
                 dest: '<%= yeoman.project %>/html/components/',
                 src: ['<%= yeoman.project %>/jade/components/*.jade']
             },
-            dist: {
+            dashboard: {
+                options: {
+                    pretty: true,
+                    client: false,
+                    data: {
+                        debug: true
+                    }
+                },
+                dest: '<%= yeoman.project %>/dashboard',
+                src: ['<%= yeoman.project %>/dashboard/jade/pages/*.jade']
+            },
+            distPages: {
                 options: {
                     pretty: true,
                     client: false,
@@ -203,7 +232,7 @@ module.exports = function (grunt) {
                 dest: '<%= yeoman.dist %>/html/pages/',
                 src: ['<%= yeoman.project %>/jade/pages/*.jade']
             },
-            distTwo: {
+            distComponents: {
                 options: {
                     pretty: true,
                     client: false,
@@ -255,6 +284,14 @@ module.exports = function (grunt) {
                     debugInfo: true,
                     relativeAssets: false
                 }
+            },
+            dashboard: {
+                options: {
+                    sassDir: '<%= yeoman.project %>/dashboard/styles',
+                    cssDir: '<%= yeoman.project %>/dashboard/styles',
+                    debugInfo: true,
+                    relativeAssets: false
+                }
             }
         },
         autoprefixer: {
@@ -262,6 +299,14 @@ module.exports = function (grunt) {
                 browsers: ['last 5 versions', '> 1%', 'ie 8']
             },
             dist: {
+                files: [{
+                    expand: true,
+                    cwd: '<%= yeoman.project %>/dashboard/styles',
+                    src: '{,*/}*.css',
+                    dest: '<%= yeoman.project %>/dashboard/styles'
+                }]
+            },
+            dashboard: {
                 files: [{
                     expand: true,
                     cwd: '.tmp/styles/',
@@ -313,24 +358,12 @@ module.exports = function (grunt) {
                 }
             }
         },
-        rev: {
-            dist: {
-                files: {
-                    src: [
-                        '<%= yeoman.dist %>/scripts/{,*/}*.js',
-                        '<%= yeoman.dist %>/styles/{,*/}*.css',
-                        '<%= yeoman.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp}',
-                        '<%= yeoman.dist %>/styles/fonts/*'
-                    ]
-                }
-            }
-        },
         useminPrepare: {
             options: {
                 dest: '<%= yeoman.dist %>/scripts/global',
                 uglify: 'none'
             },
-            html: '<%= yeoman.project %>/html/pages/index.html'
+            html: '<%= yeoman.project %>/html/pages/p001-homepage.html'
         },
         usemin: {
             options: {
@@ -424,6 +457,18 @@ module.exports = function (grunt) {
                     src: 'html5shiv/{,*/}*'
                 }, {
                     expand: true,
+                    dot: true,
+                    cwd: '<%= yeoman.project %>/bower_components',
+                    dest: '<%= yeoman.dist %>/bower_components',
+                    src: 'jquery/jquery.min.js'
+                }, {
+                    expand: true,
+                    dot: true,
+                    cwd: '<%= yeoman.project %>',
+                    dest: '<%= yeoman.dist %>',
+                    src: ['dashboard/**', '!dashboard/**/jade/**']
+                }, {
+                    expand: true,
                     cwd: '.tmp/images',
                     dest: '<%= yeoman.dist %>/images',
                     src: [
@@ -450,9 +495,11 @@ module.exports = function (grunt) {
         },
         concurrent: {
             server: [
-                'jade:test',
-                'jade:testTwo',
-                'compass:server'
+                'jade:pages',
+                'jade:components',
+                'jade:dashboard',
+                'compass:server',
+                'compass:dashboard'
             ],
             test: [
                 'jshint',
@@ -461,6 +508,7 @@ module.exports = function (grunt) {
             ],
             dist: [
                 'compass:dist',
+                'compass:dashboard',
                 'uglify',
                 'imagemin',
                 'svgmin',
@@ -480,6 +528,7 @@ module.exports = function (grunt) {
             'copy:styles',
             'concat',
             'autoprefixer',
+            'markdown',
             'connect:livereload',
             'open:server',
             'watch'
@@ -506,8 +555,9 @@ module.exports = function (grunt) {
 
     grunt.registerTask('build', [
         'clean:dist',
-        'jade:dist',
-        'jade:distTwo',
+        'jade:distPages',
+        'jade:distComponents',
+        'jade:dashboard',
         'useminPrepare',
         'concurrent:dist',
         'autoprefixer',
@@ -515,8 +565,8 @@ module.exports = function (grunt) {
         'cssmin',
         'uglify',
         'copy:dist',
-        // 'rev',
-        'usemin'
+        'usemin',
+        'markdown'
     ]);
 
     grunt.registerTask('default', [

@@ -1,5 +1,7 @@
 dist
 .tmp
+.tmp/
 .sass-cache
+.sass-cache/
 node_modules
 .ftppass
