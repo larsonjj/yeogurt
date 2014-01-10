@@ -25,7 +25,7 @@ Yeogurt is a multi-site, front-end build framework that automates many repetitiv
 
 ### Want to skip this page and go right to the dashboard from now on?
 
-Just open up Gruntfile.js in the yeogurt/sites/select-comfort folder and change line 133 from this:
+Just open up Gruntfile.js in the yeogurt/sites/example folder and change line 133 from this:
 
 ```javascript
 path: 'http://localhost:<%= connect.options.port %>/'
